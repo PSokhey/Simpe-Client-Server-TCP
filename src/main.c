@@ -1,9 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
+#include "server.h"
 
 int main(int argc, char *argv[])
 {
@@ -32,6 +29,7 @@ int main(int argc, char *argv[])
     {
         //TODO: IMPLIMENT SERVER CODE.
         printf("server ran");
+        runServer(argv[2]);
     }
     else {
         perror("Client MUST have the file to read and Ip of server.\n");

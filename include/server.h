@@ -17,6 +17,7 @@
 
 #define PORT 5000
 #define MAX_SIZE 4096
+#define MAX_QUE 1
 
 void runServer(char* ipAddress);
 

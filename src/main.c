@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     else if(strcmp(argv[1], "server") == 0 && argc == 3)
     {
         //TODO: IMPLIMENT SERVER CODE.
-        printf("server ran");
+        printf("server ran\n");
         runServer(argv[2]);
     }
     else {

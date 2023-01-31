@@ -10,6 +10,14 @@ void runServer(char* ipAddress) {
     struct sockaddr_in serverAddr, clientAddr; // For receiving over the network.
     socklen_t clientLength = sizeof (struct sockaddr_in);
 
+    //variables for metadata.
+    time_t timeStart;
+    time_t timeEnd;
+    int timeToProcess;
+    char buffer[MAX_SIZE];
+    int bytesRead = 0;
+    int totalBytesRead = 0;
+
 
     // create socket for the server.
     socketServer = socket(AF_INET, SOCK_STREAM, 0);
@@ -47,6 +55,24 @@ void runServer(char* ipAddress) {
         perror("could not accept");
         exit(1);
     }
+
+
+    // start time and read data.
+    // keep reading while there is data.
+    timeStart = time(NULL);
+    while(bytesRead = read(socketClient, buffer, MAX_SIZE) > 0) {
+        totalBytesRead += bytesRead;
+    }
+
+    // calculate time.
+    timeEnd = time(NULL);
+    timeToProcess = timeEnd - timeStart;
+
+    // Respond with the amount of bytes read and the time taken
+    char response[32];
+    sprintf(response, "%d %d\n", totalBytesRead, timeToProcess);
+    write(socketClient, response, strlen(response));
+
 
 
 

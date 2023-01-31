@@ -19,11 +19,11 @@ set(SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
 set(INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
 
 set(SOURCE_LIST
-        src/server.c)
+        src/server.c include/client.c)
 SET(SOURCE_MAIN ${SOURCE_DIR}/main.c
         )
 set(HEADER_LIST
-        include/server.h)
+        include/server.h src/client.h)
 
 add_compile_definitions(_POSIX_C_SOURCE=200809L)
 add_compile_definitions(_XOPEN_SOURCE=700)

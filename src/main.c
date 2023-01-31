@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "server.h"
+#include "client.h"
 
 int main(int argc, char *argv[])
 {
@@ -20,8 +21,9 @@ int main(int argc, char *argv[])
     // Check if the client has enough arguments to run.
     if(strcmp(argv[1], "client") == 0 && argc == 4)
     {
-    //TODO: IMPLIMENT CLIENT CODE.
-    printf("client ran");
+        //TODO: IMPLIMENT CLIENT CODE.
+        printf("client ran\n");
+        runClient(argv[2], argv[3]);
     }
 
     // Chec if the server has enough arguments to run.

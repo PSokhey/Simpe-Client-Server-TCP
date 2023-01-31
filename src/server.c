@@ -54,6 +54,7 @@ void runServer(char* ipAddress) {
 
 
     //close the socket
+    close(socketClient);
     close(socketServer);
 
 }
